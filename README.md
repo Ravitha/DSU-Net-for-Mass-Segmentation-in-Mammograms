@@ -1,7 +1,6 @@
 # Deeply Supervised U-Net-for-Mass-Segmentation-in-Mammograms
 
-:pushpin: Do refer the article mentioned below to understand the proposed model<br/>
-This repository contains the implementation of the paper
+:pushpin: This repository contains the implementation of the paper mentioned below<br/>
 >Ravitha Rajalakshmi N, Vidhyapriya R, Elango N, Ramesh N. Deeply supervised U-Net for mass segmentation in digital mammograms. Int J Imaging Syst Technol. 2020; 1–13. https://doi.org/10.1002/ima.22516
 
 :dart: Implementation of the model and its related models can be found at :file_folder: Models <br/>

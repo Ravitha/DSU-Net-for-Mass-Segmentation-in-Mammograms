@@ -13,7 +13,9 @@ List of models <br/>
 </ol>
 
 :dart: Experiments were conducted using the data from CBIS-DDSM and INBreast
-The CBIS-DDSM data that support the findings of this study are openly available in Mass-Training and Mass-Test folders at https://doi.org/10.7937/K9/TCIA.2016.7O02S9CY, reference number [1]. The INBREAST data used in the study can be obtained on request to the authors of the article DOI: 10.1016/j.acra.2011.09.014, reference number [2]
+
+:pushpin:The CBIS-DDSM data that support the findings of this study are openly available in Mass-Training and Mass-Test folders at https://doi.org/10.7937/K9/TCIA.2016.7O02S9CY
+:pushpin:The INBREAST data used in the study can be obtained on request to the authors of the article DOI: 10.1016/j.acra.2011.09.014, reference number
 
 
 ## References

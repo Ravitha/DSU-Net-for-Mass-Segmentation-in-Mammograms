@@ -3,9 +3,14 @@
 :pushpin: This repository contains the implementation of the paper mentioned below<br/>
 >Ravitha Rajalakshmi N, Vidhyapriya R, Elango N, Ramesh N. Deeply supervised U-Net for mass segmentation in digital mammograms. Int J Imaging Syst Technol. 2020; 1–13. https://doi.org/10.1002/ima.22516
 
-:dart: Implementation of the model and its related models can be found at :file_folder: Models <br/>
-List of models along with their reference papers
-AU-
+:notebook: Implementation of the model and its related models can be found at :file_folder: Models <br/>
+
+List of models <br/>
+<ol>
+  <li>AU-Net</li>
+  <li>ASPP Net</li>
+  <li>Dense Net</li>
+</ol>
 
 :dart: Experiments were conducted using the data from CBIS-DDSM and INBreast
 The CBIS-DDSM data that support the findings of this study are openly available in Mass-Training and Mass-Test folders at https://doi.org/10.7937/K9/TCIA.2016.7O02S9CY, reference number [1]. The INBREAST data used in the study can be obtained on request to the authors of the article DOI: 10.1016/j.acra.2011.09.014, reference number [2]

@@ -30,7 +30,7 @@ class GetCurrentEpoch(Callback):
 
 t = K.variable(1.0)
 T = K.constant(20.0)
-def composite_loss():
+def composite_loss(layer1, layer2, layer3, layer4, layer5, layer6, fusion):
   
     def be(x):
         ori = np.copy(x)
@@ -54,13 +54,25 @@ def composite_loss():
         numerator = 2 * tf.reduce_sum(tf.multiply(y_true,y_pred), axis=(1,2))
         denominator = tf.reduce_sum(K.square(y_true) +K.square(y_pred), axis=(1,2))
         x = (numerator+1) / (denominator+1)
-        #x = tf.reduce_mean(x)
-        return (-K.log(x))**0.3#0.3
+        x = tf.reduce_mean(x)
+        return  (-K.log(x))**0.3#0.3
     
     def combined(y_true, y_pred):
-        return soft_dice_loss(y_true, y_pred) 
+        eroded = tf.compat.v1.placeholder(tf.float32,(None,256,256,1))   
+        erode = tf.numpy_function(be,[y_true],[tf.float32])
+        eroded = erode[0]
+        eroded = tf.ensure_shape(eroded, (None, 256, 256,1))
+        return soft_dice_loss(y_true, y_pred) + (1-t/100)**2 *  (soft_dice_loss(eroded, layer1) \
+             +  soft_dice_loss(eroded, layer2) \
+             +  soft_dice_loss(eroded, layer3) + \
+                soft_dice_loss(y_true, layer4) + \
+                soft_dice_loss(y_true, layer5) + \
+                soft_dice_loss(y_true, layer6) + \
+                soft_dice_loss(y_true, fusion)) 
     
     return combined
+
+
 
 def Channel_Attention(merge,channels):
     #GAP => Dense(c/16) => Dense(c) => multiply coefficients with Tensor
